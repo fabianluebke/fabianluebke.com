@@ -1,0 +1,106 @@
+:root {
+  --text: #111;
+  --muted: #6b6b6b;
+  --line: #e4e4e4;
+  --bg: #fff;
+  --accent: #c8642a;
+  --measure: 40rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Helvetica Neue", Helvetica, Arial, "Inter", system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+a:hover { color: var(--accent); }
+a:focus-visible, .button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.wrap { max-width: var(--measure); margin: 0 auto; padding: 0 1.25rem; }
+
+/* Kopfzeile */
+.site-header { padding: 1.75rem 0; }
+.site-header .wrap { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.75rem 1.5rem; }
+.site-name { font-weight: 700; text-decoration: none; letter-spacing: -0.01em; }
+.site-nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; font-size: 0.9375rem; }
+.site-nav a { text-decoration: none; color: var(--muted); }
+.site-nav a:hover { color: var(--accent); }
+.lang { color: var(--muted); }
+.lang [aria-current] { color: var(--text); font-weight: 700; }
+
+/* Abschnitte */
+section { padding: 4rem 0; border-top: 1px solid var(--line); }
+section:first-of-type { border-top: 0; padding-top: 2.5rem; }
+
+h1, h2, h3 { line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 1rem; }
+h1 { font-size: clamp(2rem, 6vw, 2.75rem); font-weight: 700; }
+h2 { font-size: 1.5rem; font-weight: 700; }
+h3 { font-size: 1.25rem; font-weight: 700; }
+p { margin: 0 0 1rem; }
+
+.label { font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 1.5rem; }
+
+/* Einstieg */
+.situations { list-style: none; padding: 0; margin: 2rem 0; }
+.situations li { padding: 0.6rem 0 0.6rem 1.25rem; border-left: 2px solid var(--line); margin-bottom: 0.5rem; }
+.question { font-size: 1.25rem; font-weight: 700; margin: 2rem 0 1.5rem; }
+.portrait { margin: 3rem 0 0; }
+.portrait img { display: block; width: 100%; max-width: 22rem; height: auto; aspect-ratio: 4 / 5; object-fit: cover; filter: grayscale(1); background: #eee; }
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.4rem;
+  background: var(--text);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  border: 1px solid var(--text);
+}
+.button:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.button.secondary { background: transparent; color: var(--text); }
+.button.secondary:hover { background: transparent; color: var(--accent); border-color: var(--accent); }
+
+/* Kunden */
+.clients { color: var(--muted); font-size: 1.0625rem; }
+
+/* Angebote */
+.offers { list-style: none; padding: 0; margin: 0; }
+.offers li { padding: 2rem 0; border-top: 1px solid var(--line); }
+.offers li:first-child { border-top: 0; padding-top: 0.5rem; }
+.num { display: block; color: var(--accent); font-weight: 700; font-size: 0.9375rem; margin-bottom: 0.5rem; font-variant-numeric: tabular-nums; }
+
+/* Stimmen */
+blockquote { margin: 0 0 3rem; padding: 0; }
+blockquote:last-child { margin-bottom: 0; }
+blockquote p { font-size: 1.1875rem; line-height: 1.5; }
+blockquote footer { font-size: 0.9375rem; color: var(--muted); }
+blockquote footer strong { color: var(--text); }
+
+/* Fußzeile */
+.site-footer { border-top: 1px solid var(--line); padding: 2.5rem 0 3rem; font-size: 0.9375rem; color: var(--muted); }
+.site-footer ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+.site-footer a { text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; }
+
+/* Platzhalter (vor Livegang entfernen) */
+.todo { background: #fff3e8; color: #8a3d0f; padding: 0 0.2em; }
+
+/* Rechtsseiten */
+.legal h1 { font-size: 2rem; }
+.legal h2 { font-size: 1.125rem; margin-top: 2rem; }
+
+@media (max-width: 30rem) {
+  body { font-size: 1rem; }
+  section { padding: 3rem 0; }
+  .site-header { padding: 1.25rem 0; }
+}
